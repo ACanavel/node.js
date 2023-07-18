@@ -1,0 +1,10 @@
+
+  <h1 style="text-align: center;">Informacion Cambiaria</h1>
+  <p style="text-align: center;">¡Hola! Los indicadores económicos para hoy son:</p>
+  <ul style="text-align: center; list-style-type: none; padding: 0;">
+    <li>- El valor del dólar hoy es: 805.02&#x1F4B5;</li>
+    <li>- El valor del Euro hoy es: 882.02</li>
+    <li>- El valor de la UF hoy es: 36081.07</li>
+    <li>- El valor de la UTM hoy es: 63263</li>
+  </ul>
+  

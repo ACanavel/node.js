@@ -1,0 +1,24 @@
+{
+    "almuerzos": [
+        {
+            "nombre": "cazuela",
+            "precio": 5990
+        },
+        {
+            "nombre": "carbonada",
+            "precio": 4990
+        },
+        {
+            "nombre": "tallarines",
+            "precio": 5000
+        },
+        {
+            "nombre": "tallarines",
+            "precio": 5000
+        },
+        {
+            "nombre": "empanadas",
+            "precio": 3500
+        }
+    ]
+}

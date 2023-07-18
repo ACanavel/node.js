@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "codigo": "LIC0003",
+  "diagnostico": "Licencia por arteria con grasa",
+  "fechaInicio": "2023-07-11T17:05:26.195Z",
+  "fechaTermino": "2023-07-11T17:05:26.195Z",
+  "updatedAt": "2023-07-11T17:05:26.219Z",
+  "createdAt": "2023-07-11T17:05:26.195Z",
+  "MedicoId": 1,
+  "PacienteId": 1
+}

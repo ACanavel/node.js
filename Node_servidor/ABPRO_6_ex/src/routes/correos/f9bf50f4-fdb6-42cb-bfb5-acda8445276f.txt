@@ -1,0 +1,8 @@
+
+    <h1>Informacion Cambiaria</h1>
+    <p>¡Hola! Los indicadores económicos para hoy son:</p>
+    - El valor del dólar hoy es: 805.02
+    - El valor del Euro hoy es: 882.02
+    - El valor de la UF hoy es: 36081.07
+    - El valor de la UTM hoy es: 63263
+  

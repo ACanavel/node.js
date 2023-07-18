@@ -1,0 +1,5 @@
+A la fecha: Thu Jun 15 2023 16:28:11 GMT-0400 (hora estándar de Chile)
+Fue realizada cotización con los siguientes datos:
+Cantidad de pesos a convertir: 20000 pesos
+Convertido a "dólar" da un total de:
+$24.88

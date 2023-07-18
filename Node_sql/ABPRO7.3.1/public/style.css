@@ -1,0 +1,35 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+form {
+  padding: 30px;
+  background: #984848;
+  color: white;
+  border-radius: 15px;
+}
+.error {
+  border-color: rgb(255, 238, 0);
+}
+
+#login-password-error-msg {
+  color: rgb(251, 255, 7);
+  font-size: 12px;
+  display: none;
+}
+
+.error-message {
+  color: rgb(251, 255, 7);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+#login-email-error {
+  color: rgb(251, 255, 7);
+  font-size: 12px;
+  display: none;
+
+}

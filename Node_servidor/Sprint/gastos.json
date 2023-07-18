@@ -1,0 +1,16 @@
+{
+ "gastos": [
+  {
+   "id": "cd6c97",
+   "roommate": "Chandresh Singh",
+   "descripcion": "Articulos de limpieza",
+   "monto": 15000
+  },
+  {
+   "id": "2bac3d",
+   "roommate": "Sai Prajapati",
+   "descripcion": "comida",
+   "monto": 50000
+  }
+ ]
+}

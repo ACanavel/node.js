@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Desafío - Spam Economy Spa</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Spam Economy Spa</h1>
+    <form action="/send" method="POST">
+      <label for="correos">Correos destino:</label>
+      <input type="text" id="correos" name="correos" placeholder="Ingrese las direcciones de correo separadas por ','" required>
+
+      <label for="asunto">Asunto:</label>
+      <input type="text" id="asunto" name="asunto" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+</body>
+</html>

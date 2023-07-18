@@ -1,0 +1,32 @@
+{
+    "cafes": [
+        {
+            "nombre": "cafe italia",
+            "precio": 3950
+        },
+        {
+            "nombre": "chococafe",
+            "precio": 4900
+        },
+        {
+            "nombre": "capuccino",
+            "precio": 5000
+        },
+        {
+            "nombre": "cafe americano",
+            "precio": 1500
+        },
+        {
+            "nombre": "caramel latte",
+            "precio": 3500
+        },
+        {
+            "nombre": "te chai",
+            "precio": 3500
+        },
+        {
+            "nombre": "cafe rojo",
+            "precio": 500
+        }
+    ]
+}

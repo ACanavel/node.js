@@ -1,0 +1,124 @@
+{
+  "coffeeTypes": [
+    {
+      "id": 1,
+      "name": "Espresso",
+      "origin": "Italy",
+      "description": "A concentrated coffee beverage brewed by forcing a small amount of nearly boiling water through finely ground coffee beans."
+    },
+    {
+      "id": 2,
+      "name": "Cappuccino",
+      "origin": "Italy",
+      "description": "An espresso-based coffee drink that originated in Italy, and is traditionally prepared with steamed milk foam."
+    },
+    {
+      "id": 3,
+      "name": "Americano",
+      "origin": "United States",
+      "description": "A style of coffee prepared by brewing espresso with added hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee."
+    },
+    {
+      "id": 4,
+      "name": "Latte",
+      "origin": "Italy",
+      "description": "A coffee drink made with espresso and steamed milk."
+    },
+    {
+      "id": 5,
+      "name": "Mocha",
+      "origin": "Yemen",
+      "description": "A type of coffee made from a combination of espresso, chocolate syrup, and steamed milk."
+    },
+    {
+      "id": 6,
+      "name": "Turkish Coffee",
+      "origin": "Turkey",
+      "description": "A method of preparing coffee where finely ground coffee beans are simmered in a pot, optionally with sugar, and served in a cup where the grounds are allowed to settle."
+    },
+    {
+      "id": 7,
+      "name": "Pike Place Roast",
+      "origin": "Various",
+      "description": "Starbucks' signature medium-roast coffee with smooth and balanced flavors."
+    },
+    {
+      "id": 8,
+      "name": "Caramel Macchiato",
+      "origin": "Various",
+      "description": "An espresso-based beverage with steamed milk, vanilla syrup, and caramel drizzle."
+    },
+    {
+      "id": 9,
+      "name": "Frappuccino",
+      "origin": "Various",
+      "description": "A blended coffee beverage with ice, milk, and various flavors, topped with whipped cream."
+    },
+    {
+      "id": 10,
+      "name": "Flat White",
+      "origin": "Australia",
+      "description": "An espresso-based drink with velvety steamed milk, created with a small layer of microfoam on top."
+    },
+    {
+      "id": 11,
+      "name": "Guatemalan Coffee",
+      "origin": "Guatemala",
+      "description": "Coffee produced in the highlands of Guatemala, known for its full body, rich flavor, and bright acidity."
+    },
+    {
+      "id": 12,
+      "name": "Colombian Coffee",
+      "origin": "Colombia",
+      "description": "Renowned for its rich and mild flavor, Colombian coffee is grown in the mountainous regions of Colombia."
+    },
+    {
+      "id": 13,
+      "name": "Costa Rican Coffee",
+      "origin": "Costa Rica",
+      "description": "Grown in the high-altitude regions of Costa Rica, this coffee is characterized by its bright acidity and fruity notes."
+    },
+    {
+      "id": 14,
+      "name": "Mexican Coffee",
+      "origin": "Mexico",
+      "description": "Mexican coffee offers a range of flavors, from light and fruity to dark and chocolatey, depending on the region it is grown in."
+    },
+    {
+      "id": 15,
+      "name": "Peruvian Coffee",
+      "origin": "Peru",
+      "description": "Peruvian coffee is known for its balanced flavors, medium body, and pleasant acidity."
+    },
+    {
+      "id": 16,
+      "name": "Brazilian Coffee",
+      "origin": "Brazil",
+      "description": "Brazil is the largest coffee producer in the world, offering a variety of coffee types with different flavors and profiles."
+    },
+    {
+      "id": 17,
+      "name": "Ecuadorian Coffee",
+      "origin": "Ecuador",
+      "description": "Ecuadorian coffee is known for its floral and fruity flavors, often grown in the high-altitude regions of the country."
+    },
+    {
+      "id": 18,
+      "name": "Bolivian Coffee",
+      "origin": "Bolivia",
+      "description": "Bolivian coffee is cultivated in the Yungas region, offering a unique flavor profile with notes of caramel and nuts."
+    },
+    {
+      "id": 19,
+      "name": "Nicaraguan Coffee",
+      "origin": "Nicaragua",
+      "description": "Nicaraguan coffee is recognized for its smooth and balanced taste, with flavor notes ranging from chocolate to citrus."
+    },
+    {
+      "id": 20,
+      "name": "Honduran Coffee",
+      "origin": "Honduras",
+      "description": "Honduran coffee is known for its bright acidity, medium body, and flavor notes of chocolate and nuts."
+    }
+  ]
+}
