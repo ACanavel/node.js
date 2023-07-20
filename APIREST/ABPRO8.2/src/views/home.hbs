@@ -1,51 +1,45 @@
-<div id="AgregarCancion">
-    <h2 class="pt-3"> 𝄞 Mi Repertorio 𝄞 </h2>
-  
-        <div class="form-group row">
-          <label for="name" class="col-sm-2 col-form-label">Canción:</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="cancion" />
-          </div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Nueva Canción</h2>
+      <form>
+        <div class="form-group">
+          <label for="cancion">Canción:</label>
+          <input type="text" class="form-control" id="cancion" />
         </div>
-        <div class="form-group row">
-          <label for="email" class="col-sm-2 col-form-label">Artista: </label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="artista" />
-          </div>
+        <div class="form-group">
+          <label for="artista">Artista:</label>
+          <input type="text" class="form-control" id="artista" />
         </div>
-        <div class="form-group row">
-          <label for="rut" class="col-sm-2 col-form-label">Tono:</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="tono" />
-          </div>
+        <div class="form-group">
+          <label for="tono">Tono:</label>
+          <input type="text" class="form-control" id="tono" />
         </div>
-        <button
-          onclick="nuevaCancion()"
-          id="agregarCancion"
-          class="m-auto btn btn-success"
-        >
-          Agregar
-        </button>
+        <div class="d-flex justify-content-center">
+          <button type="button" onclick="nuevaCancion()" id="agregarCancion" class="btn btn-success">Agregar</button>
+          <button type="button" onclick="editarCancion()" id="editarCancion" class="btn btn-primary ml-3 d-none">Guardar</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h2>Repertorio</h2>
+      <div class="mx-3 pt-3">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Canción</th>
+              <th scope="col">Artista</th>
+              <th scope="col">Tono</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo"></tbody>
+        </table>
+        <div class="text-center" id="sinCancionesMessage" style="display: none;">
+          <p>No hay canciones en el repertorio.</p>
+        </div>
       </div>
     </div>
   </div>
-  <div id="ListaCanciones">
-    <hr />
-    <hr />
-    <h2>Tabla de canciones 🎤</h2>
-    <div class="mx-3 pt-5">
-      <table class="table table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Canción</th>
-            <th scope="col">Artista</th>
-            <th scope="col">Tono</th>
-            <th scope="col">Telefono</th>
-
-          </tr>
-        </thead>
-        <tbody id="cuerpo"></tbody>
-      </table>
-    </div>
-  </div>
+</div>

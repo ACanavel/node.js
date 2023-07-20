@@ -1,82 +1,133 @@
-let url = "http://localhost:3000/cancion";
-let tbody = document.getElementById("cuerpo");
-let cancion = document.getElementById("cancion");
-let artista = document.getElementById("artista");
-let tono = document.getElementById("tono");
+"use strict";
 
+const url = "http://localhost:3000/";
+const tbody = document.getElementById("cuerpo");
+const cancionInput = document.getElementById("cancion");
+const artistaInput = document.getElementById("artista");
+const tonoInput = document.getElementById("tono");
+const agregarBtn = document.getElementById("agregarCancion");
+const editarBtn = document.getElementById("editarCancion");
+const sinCancionesMessage = document.getElementById("sinCancionesMessage");
 
 let canciones = [];
-window.onload = getData();
+
+window.onload = init;
+
+async function init() {
+  try {
+    await getData();
+    renderTable();
+  } catch (error) {
+    console.error("Error al obtener los datos:", error);
+    alert("Error al obtener los datos");
+  }
+}
 
 async function getData() {
-  try {
-    const response = await axios.get(url); 
+  const response = await axios.get(url + "canciones");
+  if (response.data && response.data.length > 0) {
     canciones = response.data;
-    tbody.innerHTML = "";
-    canciones.forEach((c, i) => {
-      tbody.innerHTML += `
-        <tr>
-          <td>${i + 1}</td>
-          <td>${c.cancion}</td>
-          <td>${c.artista}</td>
-          <td>${c.tono}</td>
-          <td>
-            <button class="btn btn-warning" onclick="prepararCancion(${i}, '${c.id}')">Editar</button>
-            <button class="btn btn-danger" onclick="eliminarCancion(${i}, '${c.id}')">Eliminar</button>
-          </td>
-        </tr>
-      `;
-    });
-  } catch (error) {
-    console.error("Error al obtener las canciones:", error);
+  } else {
+    canciones = [];
   }
-  cancion.value = "";
-  artista.value = "";
-  tono.value = "";
 }
 
-function nuevaCancion() {
+function renderTable() {
+  tbody.innerHTML = "";
+  canciones.forEach((c, i) => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${c.CancionId}</td>
+        <td>${c.cancion}</td>
+        <td>${c.artista}</td>
+        <td>${c.tono}</td>
+        <td class="d-flex">
+          <button class="btn btn-warning" onclick="prepararCancion(${c.CancionId}, ${i})">Editar</button>
+          <button class="btn btn-danger ml-3" onclick="eliminarCancion(${c.CancionId})">Eliminar</button>
+        </td>
+      </tr>
+    `;
+  });
+
+  if (canciones.length > 0) {
+    sinCancionesMessage.style.display = "none";
+  } else {
+    sinCancionesMessage.style.display = "block";
+  }
+}
+
+async function nuevaCancion() {
   const data = {
-    cancion: cancion.value,
-    artista: artista.value,
-    tono: tono.value,
+    cancion: cancionInput.value.trim(),
+    artista: artistaInput.value.trim(),
+    tono: tonoInput.value.trim(),
   };
-  axios.post(url, data)
-    .then(() => getData())
-    .catch(error => console.error("Error al agregar la canción:", error));
+
+  if (!data.cancion || !data.artista || !data.tono) {
+    alert("Completa todos los campos antes de agregar la canción.");
+    return;
+  }
+
+  try {
+    await axios.post(url + "cancion", data);
+    await getData();
+    renderTable();
+    cancionInput.value = "";
+    artistaInput.value = "";
+    tonoInput.value = "";
+  } catch (error) {
+    console.error("Error al agregar la canción:", error);
+    alert("Error al agregar la canción");
+  }
 }
 
-function eliminarCancion(i, id) {
-  axios.delete(url + "?id=" + id)
-    .then(() => {
-      alert("Canción " + canciones[i].cancion + " eliminada");
-      getData();
-    })
-    .catch(error => console.error("Error al eliminar la canción:", error));
+function prepararCancion(id, i) {
+  const selectedCancion = canciones.find((c) => c.CancionId === id);
+  if (selectedCancion) {
+    cancionInput.value = selectedCancion.cancion;
+    artistaInput.value = selectedCancion.artista;
+    tonoInput.value = selectedCancion.tono;
+    editarBtn.setAttribute("onclick", `editarCancion(${id})`);
+    agregarBtn.style.display = "none";
+    editarBtn.style.display = "block";
+  }
 }
 
-/* function prepararCancion(i, id) {
-  cancion.value = canciones[i].cancion;
-  artista.value = canciones[i].artista;
-  tono.value = canciones[i].tono;
-  document.getElementById("editar").setAttribute("onclick", `editarCancion('${id}')`);
-  document.getElementById("agregar").style.display = "none";
-  document.getElementById("editar").style.display = "block";
-} */
-
-function editarCancion(id) {
+async function editarCancion(id) {
   const data = {
-    id: id,
-    cancion: cancion.value,
-    artista: artista.value,
-    tono: tono.value,
+    cancion: cancionInput.value.trim(),
+    artista: artistaInput.value.trim(),
+    tono: tonoInput.value.trim(),
   };
-  axios.put(url, data)
-    .then(() => {
-      getData();
-      document.getElementById("agregar").style.display = "block";
-      document.getElementById("editar").style.display = "none";
-    })
-    .catch(error => console.error("Error al editar la canción:", error));
+
+  if (!data.cancion || !data.artista || !data.tono) {
+    alert("Completa todos los campos antes de editar la canción.");
+    return;
+  }
+
+  try {
+    await axios.put(url + "cancion", data);
+    await getData();
+    renderTable();
+    cancionInput.value = "";
+    artistaInput.value = "";
+    tonoInput.value = "";
+    agregarBtn.style.display = "block";
+    editarBtn.style.display = "none";
+  } catch (error) {
+    console.error("Error al editar la canción:", error);
+    alert("Error al editar la canción");
+  }
 }
-document.getElementById("peluquero").addEventListener("change", data);
+
+async function eliminarCancion(id) {
+  try {
+    await axios.delete(url + "cancion?id=" + id);
+    await getData();
+    renderTable();
+    alert("Canción eliminada con éxito.");
+  } catch (error) {
+    console.error("Error al eliminar la canción:", error);
+    alert("Error al eliminar la canción");
+  }
+}

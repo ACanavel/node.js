@@ -2,9 +2,9 @@ import mysql from "mysql2/promise";
 import { config } from "dotenv";
 config();
 
-// Creación del pool de conexiones a la base de datos
+
 const pool = mysql.createPool({
-  port: process.env.DB_PORT, // Asegúrate de tener esta variable en tu archivo .env
+  port: process.env.DB_PORT, 
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
@@ -13,10 +13,17 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
-// Función para obtener todos los registros de la tabla "repertorio"
-const repertorio = async () => {
+const consulta = async () => {
   try {
-    const [rows] = await pool.query(`SELECT * FROM repertorio`); // Asegúrate de que la tabla se llama "repertorio", no "Repertorio"
+    const [rows] = await pool.query(
+      `SELECT 
+        repertorio.id as RepertorioId,
+        repertorio.artista,
+        repertorio.tono
+      FROM 
+        repertorio
+      `
+    );
     return rows;
   } catch (error) {
     console.error(error);
@@ -24,8 +31,19 @@ const repertorio = async () => {
   }
 };
 
-// Función para insertar un nuevo registro en la tabla "repertorio"
-const insertarRepertorio = async (datos) => {
+
+const cancion = async () => {
+  try {
+    const [rows] = await pool.query(`SELECT * FROM repertorio`); 
+    return rows;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
+
+
+const insertarCancion = async (datos) => {
   const consulta = "INSERT INTO repertorio (cancion, artista, tono) VALUES (?, ?, ?)";
   try {
     const [result] = await pool.query(consulta, datos);
@@ -36,8 +54,8 @@ const insertarRepertorio = async (datos) => {
   }
 };
 
-// Función para eliminar un registro de la tabla "repertorio" por su ID
-const eliminarRepertorio = async (id) => {
+
+const eliminarCancion = async (id) => {
   try {
     const [result] = await pool.query("DELETE FROM repertorio WHERE id = ?", [id]);
     return result.affectedRows;
@@ -47,8 +65,8 @@ const eliminarRepertorio = async (id) => {
   }
 };
 
-// Función para editar un registro de la tabla "repertorio" por su ID
-const editarRepertorio = async (datos) => {
+
+const editarCancion = async (datos) => {
   const consulta = "UPDATE repertorio SET cancion=?, artista=?, tono=? WHERE id=?";
   try {
     const [result] = await pool.query(consulta, datos);
@@ -59,4 +77,4 @@ const editarRepertorio = async (datos) => {
   }
 };
 
-export { repertorio, insertarRepertorio, eliminarRepertorio, editarRepertorio };
+export { consulta, cancion, insertarCancion, eliminarCancion, editarCancion };
